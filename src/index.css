@@ -1,13 +1,205 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@1,300&display=swap");
+
+p,
+h1,
+h3,
+h5,
+li,
+button,
+th {
+  font-family: "Rubik", sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  margin: 0px;
+}
+
+.Navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: black;
+  padding: 10px 10px;
+  margin: 0px;
+}
+
+.Navbar p {
+  color: white;
+  font-size: 20px;
+}
+
+.Navbar a {
+  font-size: 20px;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+.fondo {
+  margin: 0px;
+  background-image: url("https://us.123rf.com/450wm/milkos/milkos1808/milkos180801303/107130436-rebanadas-de-pizza-con-jam%C3%B3n-y-especias-sobre-fondo-negro-espacio-de-copia-vista-superior.jpg?ver=6");
+  background-size: cover;
+}
+
+.banner {
+  margin: 0px;
+  color: white;
+  text-align: center;
+  padding: 30px 20px;
+  font-size: 20px;
+}
+
+.banner p,
+h1 {
+  margin: 0px;
+}
+
+.views {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.views a {
+  margin-right: 20px;
+}
+
+.views p {
+  margin-left: 4px;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-top: 10px;
+
+}
+
+.card {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  /*align-items: center;*/
+  border: solid 1px grey;
+  margin-right: 10px;
+}
+
+.card h3 {
+  font-size: 25px;
+  margin-bottom: 0px;
+}
+
+.card img {
+  width: 100%;
+}
+
+.Ingredients {
+  border-top: 1px solid grey;
+  border-bottom: 1px solid grey;
+}
+
+.shopping {
+  text-align: center;
+}
+
+.ingredients .listStyle {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+}
+
+.buttons button {
+  margin-right: 6px;
+
+}
+
+.listStyle {
+  list-style: none;
+  list-style-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABmJLR0QA/wD/AP+gvaeTAAAEEElEQVRYhe2WXUxbZRjHf29PP2gppS0fY8MyvuZQNoGNJU5hW5xBZZmZm+gu/AhB3cVuXFzUcTHJjCbebImZOkzmlmnMogMyuTDCBSIuM04jUahDBmztYLiN7xZa+vF6UZNBKaU48Uaem3PyvO/z/H/nf54358By/N9DLLZAnmQVQXUvQdmCDJxmkDpRg/+fAqgWXWFIqibg1yEDjwNnSaNb1rJf1qL5bwCmvXvDMplIjiPpkCfYvqQA8qdtyejizPMs3ws0yxMck1+gLAkAcYnPsv5hhQ3bwJoWaYcAXmWIRvk+pn8fAFnFRQfU98FVM+RugjhDJIwn0NEmP8SyUMeYT4G079zA6fafuei8kzTroboEBuxwqz9SWRuC7WIfvvn6xu5A18jBWeIAo1PQ5oS8YshYG6mqFMm70drGBCCdFXqmAzsjLg5Pha6r8yDngUg7DsiPKLorACZ8T5NpNqKNMNy5SfzS4ea9D/qpazchbXOcUIDjUkZ+3bEByGAVRi28UMQsiAdtDGancuSok/vW6Gm5ME69PQVS0mfXCx6ilqcitVYvqP3rnmzwbwGgOB3yUsA5ClYDrDDiaHeRadPxZJkVKaGrZwrKCmBiBDyTMxrxJlAf3n9hBxT/y1OeoPix3cWft6bBqMWRYaE5qOKH2x7uXxvP0IifA2/1cersTR7bamEChbHV68Jd2CRrKQlvH/UYypZt6skEk2Pf61dWpiRp6L3moeagjQGLpPG6G4BCi44XMxL57bKbjHQdl4M+6hwuSlL0POO2w9DgjMdVzolXAhWxO5BqKu/ocq9Mtqo5WpNJ5d5UmlpHKU01YNWGSttHvAwFAmwqMGKyqDl3zYUvKPEFZehkzHJTtSNcYoEZEC+tTtfS5/By/pthmltHeaTUTIJaxeH1yfS5fKhVkBoXGky3P4BfSoQQbLTGQbwWEpODTE+NodWdwzV8ZI7CfNKyszwNNA5A097ppql1lNwsPbvKLKgUgcerorEpgXtW+di8cZKxcYV4Y4Cv+l0UWXRkGTV2JGfwDJ8RxW035tOJ4oC6EtDQdZvCzhsUJgE5K0EJMV+4ZMA5oEGvlzR8baLPoSXL5vXvLpefgPKpyG/4Prq7UQCkRGBXVdLcDfWdIP9e+LYX9qyDR3Nw9of+P7p7tKxI9U8U5Hu+NCeMvyHyG2/HIhwVgI5dW3F51nD+9zviELpvsMNmG4qCz2wK3LRY/NW7X/vszGJEFwZQBau4Pgb+YFheQLb1Fo6Rw8/vsJ0UxR/P+5WLNeYMoeypSMQzPUD/uIG3W0LJJIOPHOt3JBsOiUN/XLpb0Zkx14Gp6ecQGEg3edmSeQWtcgrZc0zUTAYj1C8BgJBFCLEfr/hcvHN1dClEl2M5ZsZfiOFnAUXf5BUAAAAASUVORK5CYII=");
+}
+
+/*.listStyle li {
+  display: flex;
+  align-items: center;
+}*/
+
+li p {
+  padding-left: 3px;
+}
+
+
+.description {
+  display: flex;
+}
+
+.description img {
+  width: 300px;
+  height: 300px;
+}
+
+.botones {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.botones p {
+  margin-right: 15px;
+}
+
+.botones button {
+  height: 20px;
+  margin: 0px 3px;
+  border-radius: 3px;
+  color: white;
+}
+
+.restar {
+  background-color: blue;
+  border: 1px solid blue;
+}
+
+.sumar {
+  background-color: red;
+  border: 1px solid red;
+}
+
+.conteiner {
+  background-color: #cbd7db;
+  display: flex;
+  justify-content: center;
+  padding: 50px 0px;
+}
+
+.listaCarrito {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 450px;
+}
+
+.listaCarrito h5 {
+  background-color: #cbd7db;
+  margin: 0px;
+}
+
+.pizaaAdded {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 0px;
+  border-bottom: solid 1px black;
+  background-color: white;
+}
+
+.pizaaAdded img {
+  width: 100px;
 }
