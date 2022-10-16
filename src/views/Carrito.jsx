@@ -38,19 +38,18 @@ function Carrito() {
             <div className="listaCompra">
                 <h5>Lista de compra:</h5>
                 <div className="listaCarrito">
-                    {carrito.sort((a, b) { return a > b })
-                        .map((product) => {
-                            return <div className="pizaaAdded">
-                                <img src={product.src} />
-                                <p>{product.name}</p>
-                                <div className="botones">
-                                    <p>${product.price * product.quantity}</p>
-                                    <button className="restar" onClick={() => restar(product.id)} >-</button>
-                                    <span>{product.quantity}</span>
-                                    <button className="sumar" onClick={() => sumar(product.id)}>+</button>
-                                </div>
+                    {carrito.map((product) => {
+                        return <div className="pizaaAdded">
+                            <img src={product.src} />
+                            <p>{product.name}</p>
+                            <div className="botones">
+                                <p>${product.price * product.quantity}</p>
+                                <button className="restar" onClick={() => restar(product.id)} >-</button>
+                                <span>{product.quantity}</span>
+                                <button className="sumar" onClick={() => sumar(product.id)}>+</button>
                             </div>
-                        })}
+                        </div>
+                    })}
 
                 </div>
                 <div><h3>Total: $<span>{count}</span></h3></div>
